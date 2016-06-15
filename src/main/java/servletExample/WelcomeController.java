@@ -11,10 +11,6 @@ import java.io.PrintWriter;
 public class WelcomeController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    private void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession session = request.getSession(false);
         String login = (String) session.getAttribute("login");
         String name = (String) session.getAttribute("name");
