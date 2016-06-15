@@ -12,9 +12,9 @@ public class WelcomeController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(false);
-        String login = (String) session.getAttribute("login");
-        String name = (String) session.getAttribute("name");
-        if (login != null && name != null) {
+        if (session != null) {
+            String login = (String) session.getAttribute("login");
+            String name = (String) session.getAttribute("name");
             response.setContentType("text/html;charset=UTF-8");
             PrintWriter out = response.getWriter();
             out.println("WelcomeController " + login + " : " + name);
