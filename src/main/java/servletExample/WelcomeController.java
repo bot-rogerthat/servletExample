@@ -17,7 +17,7 @@ public class WelcomeController extends HttpServlet {
             String name = (String) session.getAttribute("name");
             response.setContentType("text/html;charset=UTF-8");
             PrintWriter out = response.getWriter();
-            out.println("WelcomeController " + login + " : " + name);
+            out.println("Welcome " + login + " : " + name);
         } else {
             response.sendRedirect("index.html");
         }
