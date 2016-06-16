@@ -4,10 +4,9 @@
 </head>
 <body>
 <form method="post" action="login">
-    Login:<input type="text" name="login" /><br/>
-    Name:<input type="text" name="name" /><br/>
+    FirstName:<input type="text" name="firstName" /><br/>
+    LastName:<input type="text" name="lastName" /><br/>
     <input type="submit" value="login" />
 </form>
-</body>
-</html>
+</body></html>
 

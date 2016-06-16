@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class CheckEmptyFilter implements Filter {
+public class LoginFilter implements Filter {
 
     public void init(FilterConfig filterConfig) throws ServletException {
     }
@@ -12,10 +12,10 @@ public class CheckEmptyFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletResponse res = (HttpServletResponse) response;
 
-        String login = request.getParameter("login");
-        String name = request.getParameter("name");
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
 
-        if (login != null && name != null && !"".equals(login) && !"".equals(name)) {
+        if (!"".equals(firstName) && !"".equals(lastName)) {
             chain.doFilter(request, response);
         } else {
             res.sendRedirect("400.html");

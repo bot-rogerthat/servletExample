@@ -12,12 +12,12 @@ public class LoginController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html;charset=UTF-8");
-        String login = request.getParameter("login");
-        String name = request.getParameter("name");
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
 
         HttpSession session = request.getSession();
-        session.setAttribute("login", login);
-        session.setAttribute("name", name);
+        session.setAttribute("firstName", firstName);
+        session.setAttribute("lastName", lastName);
 
         response.sendRedirect("welcome");
     }

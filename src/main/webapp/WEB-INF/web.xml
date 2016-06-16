@@ -26,12 +26,22 @@
     </servlet-mapping>
 
     <filter>
-        <filter-name>checkEmptyFilter</filter-name>
-        <filter-class>servletExample.CheckEmptyFilter</filter-class>
+        <filter-name>loginFilter</filter-name>
+        <filter-class>servletExample.LoginFilter</filter-class>
     </filter>
 
     <filter-mapping>
-        <filter-name>checkEmptyFilter</filter-name>
+        <filter-name>loginFilter</filter-name>
         <servlet-name>login</servlet-name>
     </filter-mapping>
+
+    <servlet-mapping>
+        <servlet-name>helloWorld</servlet-name>
+        <url-pattern>/helloworld</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>helloWorld</servlet-name>
+        <servlet-class>servletExample.HelloWorldController</servlet-class>
+    </servlet>
 </web-app>
